@@ -40,10 +40,3 @@ console.log(array); // [ {age:NaN}, {age:3}, {age:NaN}, {age:5}, {age:NaN}, {age
 console.log(array.length); // 35
 
 function solution(arr) {}
-
-let arr = ['privet', 12, {}, [1, 2]];
-let arr2 = ['privet', 12, {}, [1, 2]];
-
-function returnArr(argument) {}
-returnArr(arr);
-returnArr(arr2);
