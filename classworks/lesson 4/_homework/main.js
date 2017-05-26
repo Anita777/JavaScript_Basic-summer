@@ -76,7 +76,3 @@ let array = Array.from({ length: 35 }).map(
 // console.log(array.length); // 35
 
 function solution(arr) {}
-
-function returnArr(argument) {}
-// returnArr(arr);
-// returnArr(arr2);
