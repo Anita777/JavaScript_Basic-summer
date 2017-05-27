@@ -1,8 +1,8 @@
 # Home work 5
-
-+ [Массив](https://learn.javascript.ru/array)
-+ [Методы массивов](https://learn.javascript.ru/array-methods)
-+ [Рекурсия](https://learn.javascript.ru/recursion)
+## Литература:
+> + [Массив](https://learn.javascript.ru/array)
+> + [Методы массивов](https://learn.javascript.ru/array-methods)
+> + [Рекурсия](https://learn.javascript.ru/recursion)
 
 ```javascript
 .slice() - копирует массив
