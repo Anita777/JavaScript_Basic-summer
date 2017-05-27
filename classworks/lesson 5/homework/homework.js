@@ -14,7 +14,6 @@ let arr1 = [1, false, 2, 0, 3, null, 0, 4, 0, 25];
 
 function moveZeroToEnd(arr) {}
 
-
 /*
  2. Верните сумму двух найменьших чисел в массиве
  
@@ -25,8 +24,7 @@ function moveZeroToEnd(arr) {}
  
  */
 
-function minimalNumber(arr) {
-}
+function minimalNumber(arr) {}
 
 /*
  3. Напишите функцию которая меняет местами имя и фамилию
@@ -43,7 +41,6 @@ function minimalNumber(arr) {
  capMe(['KARLY', 'DANIEL', 'KELSEY']) // returns ['Karly', 'Daniel', 'Kelsey']
  */
 
-
 //@SUPER
 /*
  1. Найдите число отсутствующее в заданной последовательности
@@ -56,9 +53,7 @@ function minimalNumber(arr) {
   
  */
 
-function random(arr) {
-
-}
+function random(arr) {}
 
 random([1, 3, 5, 9]);
 random([0, 8, 16, 32]);
