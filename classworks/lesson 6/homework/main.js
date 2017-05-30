@@ -362,7 +362,7 @@ function reverseEachWord() {
   
 }
 
-//console.log(reverseEachWord('You don\'t have to do anything special to begin using the DOM. Different browsers have different implementations of the DOM'));
+// console.log(reverseEachWord('You don\'t have to do anything special to begin using the DOM. Different browsers have different implementations of the DOM'));
 // uoY t'nod evah ot od gnihtyna laiceps ot nigeb gnisu eht .MOD tnereffiD sresworb evah tnereffid snoitatnemelpmi fo eht MOD
 
 
@@ -372,7 +372,8 @@ function reverseEachWord() {
 
 /* TASK 3
  * Добавьте в функцию reverseEachWord второй параметр,
- * данный параметр булево, если true - тогда слова так же переворачиваются в обратном порядке
+ * данный параметр булево, если true - тогда предложение так же 
+ * переворачиваются в обратном порядке
  * */
 
 
@@ -387,7 +388,8 @@ function reverseEachWord() {
 
 /* TASK 3
  * Посчитайте сколько одинаковых слов в предложении.
- * Функция должна возвращать объект у которого свойста это повторяющиеся слово,
+ * Функция должна возвращать объект у которого свойства 
+ * это повторяющиеся слово,
  * а значение это количество повторений
  * */
 
@@ -396,8 +398,6 @@ function reverseEachWord() {
 //function wordCounter(sentence) {
 
 //}
-
-let wordCounter = (sentence) =>
 
 console.log(wordCounter('Both Java and Java Script is programming and programming OOPBased Language'));
 /*
@@ -448,7 +448,6 @@ function createHashTags(arr) {
 //{"584babb6eeb4137cf14c37a3":"ASIMILINE", 584babb6eeb4137cf14c37a3:'Company2', }
 
 // @ SUPER
-
 /*
  *
  * TASK 1
@@ -464,17 +463,4 @@ function createHashTags(arr) {
 //let notUniqArray = [1, 1, 2, 2, 2, 5, 10, 25, 30, 5, 1, 0, 22, 3, 10, 3];
 //
 //console.log(uniqueElements(notUniqArray)); //1,2,5,10,25,30,0,22,3,
-//console.log(uniqueElements([1, 1, 2, 3])); // 1,2,3
-
-/*
- *
- * TASK 2
- * Отсортируйте массив с такой же последовательностью как идут цифры
- *
- */
-
-//function solution(arr) {
-//}
-//
-//console.log(solution([2, 3, 2, 2, 1, 5, 10, 25, 5, 10, 17, 1])); // 2,2,2,3,1,1,5,5,10,10,25,17
-//console.log(solution([5, 3, 5, 3, 1, 7, 5, 3, 7, 2, 5])); // 5,5,5,5,3,3,3,1,7,7,2
+//console.log(uniqueElements([1, 1, 2, 3, 3])); // 1,2,3
