@@ -334,11 +334,9 @@ let megaObject = {
 // 2 {}
 // 3
 // 4
-var friendsCompanies = listOfCompanys.map(function(elem, index, arr) {
-  let friend = megaObject.friends[index];
-  friend.companyName = elem;
-  return friend;
-});
+var friendsCompanies = listOfCompanys.map(function(company, index, arr) {});
+
+console.log(friendsCompanies);
 
 // console.log(megaObject)
 
@@ -392,6 +390,21 @@ var allNames = megaObject.friends.every(function(elem, index, arr) {
 
 arr = [10, 20, 30, 40];
 // [ {oldValue:10, newValue:20}, {oldValue:20, newValue:40} ... ]
-arr2 = arr.map(function(elem, index, arr) {});
+const someObject = { qwerty: '50', name: 'Sveta' };
+arr2 = arr.map(function(elem, index, arr) {
+  const { qwerty } = someObject;
+  console.log(qwerty);
+  return { qwerty, newValue: elem * 2, oldValue: elem };
+});
 
 // console.log(arr2);
+
+let myArr = [10, 20, 50, 100];
+
+myArr
+  .filter(function(elem, index, arr) {
+    return elem >= 50;
+  })
+  .map(function(elem, index, arr) {
+    console.log(arr)
+  })

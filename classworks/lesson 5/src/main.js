@@ -76,7 +76,6 @@ function add(x, y) {
   return x + y;
 }
 
-function double(number){
+function double(number) {
   return number * 2;
 }
-
