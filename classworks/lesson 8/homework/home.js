@@ -8,11 +8,14 @@
  * ей аргументы, и прибавлять их в строку
  * и отображать в консоле всю строку
  *
- * 
  * */
 
-function solution1() {
-  /*ВАШ КОД*/
+function solution1(someString) {
+  /* ВАШ КОД */
+  let str = '';
+  return function(concatString) {
+    console.log((str += concatString + ' '));
+  };
 }
 
 let stringBuffer = solution1();
@@ -30,12 +33,19 @@ stringBuffer('Привет'); // Замыкания Использовать н�
  *
  * */
 
-function validBraces(str) {}
+function validBraces(str) {
+  while (str.includes('[]') || str.includes('{}') || str.includes('()')) {
+    str = str.replace('{}', '').replace('[]', '').replace('()', '');
+  }
+  console.log(str);
+  console.log(str.length ? false : true);
+}
 
-validBraces('(){}[]'); //=> returns true
-validBraces('(}'); //=> returns false
+validBraces('(){}[]'); // => returns true
+validBraces('(}'); // => returns false
 validBraces('[(])'); // => returns false
-validBraces('([{}])'); //=> returns true
+validBraces('([{}])'); // => returns true
+validBraces('({[]})'); // => returns true
 
 /*
  *
@@ -47,10 +57,18 @@ validBraces('([{}])'); //=> returns true
  *
  * */
 
+// ->
+// 1. из JavaScript делается запрос на сервер
+// 2. После того как элемент был добавлен на страницу и завершил процесс
+// рендеринга
+// ->
 function makeCallback(fn) {
   for (let i = 1; i <= 10; i++) {
     setTimeout(function() {
       console.log(i);
+      if (i === 10) {
+        fn();
+      }
     }, i * 1000);
   }
 }
@@ -70,10 +88,20 @@ makeCallback(function() {
  * Вычисления должны кешироваться, если в функцию попадает закешированное 
  * значение, в консоле должно отобразиться
  * Значение взято из кэша
+ * Нельзя использовать внешние значения
  *
  * */
 
-function sum(num) {}
+function sum(num) {
+  if (!sum.cache) sum.cache = {};
+  if (num < 1) return num;
+  if (sum.cache[num]) {
+    console.log(sum.cache[num], 'Значение взято из кэша');
+    return;
+  } else {
+    sum.cache[num] = num + sum(num - 1);
+  }
+}
 
 sum(5); // 15 Значение кешировано
 sum(5); // 15 Значение взято из кэша
