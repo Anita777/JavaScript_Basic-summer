@@ -93,3 +93,23 @@ console.log(bodyDiv); //<body><div></div></body>
  *
  * */
 
+function $(tagMain, contentMain = '') {
+  return {
+    tags: [{ tagName: tagMain, content: contentMain }],
+    add(tagName, content = '') {
+      // this.tags.push({ tagName: tagName, content: content });
+      this.tags.push({ tagName, content });
+      return this;
+    },
+    render() {
+      const beginArr = [];
+      const endArr = [];
+      this.tags.forEach(tag => {
+        beginArr.push(`<${tag.tagName}>${tag.content}`);
+        endArr.unshift(`</${tag.tagName}>`);
+      });
+      this.tags = [];
+      return beginArr.concat(endArr).join('');
+    }
+  };
+}
