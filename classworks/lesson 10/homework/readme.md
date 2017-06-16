@@ -1,4 +1,3 @@
-
 > + [Первые 7](https://learn.javascript.ru/es-modern) - es6
 > + [call-apply](https://learn.javascript.ru/call-apply) es5
 > + [You Don't Know JS: Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md) (english)
