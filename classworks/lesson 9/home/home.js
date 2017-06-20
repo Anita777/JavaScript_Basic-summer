@@ -1,8 +1,7 @@
-'use strict';
+-
+00*'use strict';
 
-// Legolas Task !
-
-// TASK 1
+// Legolas Task !xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc xxxxxxxxxddxxxxxxxxxxxxxxxxxxxxx/ TASK 1
 // Отобразите достаточно ли у developers навыков ?
 // Отобразите всех разработчиков и вызовете у каждого
 // разработчика метод goodDev --
