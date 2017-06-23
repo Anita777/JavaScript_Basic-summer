@@ -25,7 +25,7 @@
  * next: Function
  *
  *
- * listen(PORT, host) - в консоле должна отобразится надпись
+ * при вызове listen(PORT, host) - в консоле должна отобразится надпись
  * "Server running on https://host:port"
  * и вызваться переданная в createServer функция
  *
@@ -35,6 +35,32 @@
  * первая функция и возвращать объект и функцию
  *
  * */
+
+function Http() { }
+Http.prototype.createServer = function(fn) {
+  let ctx = {
+    req: {
+      port: 3000,
+      url: 'https://google.com'
+    },
+    res: {
+      status: 200,
+      message: 'ok',
+      header: {
+        'content-type': 'application/json'
+      }
+    }
+  }
+  this.fn = () => {
+    fn.call(this, ctx, () => { })
+  }
+  return this;
+}
+
+Http.prototype.listen = function(PORT, host) {
+  console.log(`Server running on https://${host}:${PORT}`)
+  this.fn();
+}
 
 const server = new Http().createServer(function(ctx, next) {
   console.log(ctx);
@@ -54,16 +80,17 @@ const server = new Http().createServer(function(ctx, next) {
 // @SUPER
 
 /*
+ *
  * TASK 0
  * Создайте функцию обертку над другой функцией
  * Каждый раз при вызове внутренней функции в консоле будут отображаться аргументы функции
  * которую мы обернули
+ *
+*/
 
-/
-
-
-
-
-
-
-
+function wrap(fn) {
+  return (...args) => {
+    console.log(args);
+    fn.apply(this, args)
+  }
+}
