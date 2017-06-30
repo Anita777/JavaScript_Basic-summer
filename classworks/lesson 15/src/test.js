@@ -1,3 +1,4 @@
+// @flow
 const app = {
   appName: 'Тест по программированию',
   questions: [
@@ -21,57 +22,48 @@ const app = {
   createLi() {
     return this.new('li');
   },
-  createQuestions(question) {
-    const li = this.createLi();
-    const h3 = this.new('h3');
-    h3.textContent = question.name;
-    const ul = this.new('ul');
-    question.answers.forEach(answer => {
-      const htmlAnswer = this.createAnswer(answer);
-      ul.appendChild(htmlAnswer);
-    });
-    li.appendChild(h3);
-    li.appendChild(ul);
-    return li;
-  },
   createAnswer(answer) {
     const liAnswer = this.createLi();
     const label = this.new('label');
+    label.textContent = answer;
     const input = this.new('input');
-
     input.setAttribute('type', 'checkbox');
     liAnswer.appendChild(input);
+    console.log(input.getAttribute('type'));
     liAnswer.appendChild(label);
-    label.textContent = answer;
     return liAnswer;
   },
   render() {
     const body = document.body;
+    // 1. Создаем main
+    // 2. Создаем вопросы -> ol
+    // 3. Создаем ответы -> h3 + li*3
     const main = this.new('main');
     const h1 = this.new('h1');
-    const ol = this.new('ol');
-    const button = this.new('button');
-    button.onclick = function() {
-      const ul = document.querySelectorAll('ul');
-      [...ul].forEach(elem => {
-        elem.children[1].children[0].checked = true;
-      })
-      // Массивы + свойства объекта
-    };
-    button.textContent = 'Проверить';
     h1.textContent = this.appName;
+    const ol = this.new('ol');
 
     main.appendChild(h1);
     main.appendChild(ol);
-    main.appendChild(button);
 
     this.questions.forEach(question => {
-      const htmlQuestion = this.createQuestions(question);
-      ol.appendChild(htmlQuestion);
+      const li = this.createLi();
+      const h3 = this.new('h3');
+      h3.textContent = question.name;
+      const ul = this.new('ul');
+      question.answers.forEach(answer => {
+        /* ---------------------------- */
+        const htmlAnswer = this.createAnswer(answer);
+        /* ---------------------------- */
+        ul.appendChild(htmlAnswer);
+      });
+      li.appendChild(h3);
+      li.appendChild(ul);
+      ol.appendChild(li);
     });
     body.appendChild(main);
   },
-  new(tag) {
+  new: function(tag: string): HTMLElement {
     return document.createElement(tag);
   }
 };
