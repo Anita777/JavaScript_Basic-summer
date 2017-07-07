@@ -3,26 +3,54 @@
  в двухмерный
  а если массив двухмерный, тогда в трехмерный массив
 
- // solution([ [1, 'a'],[2, 'b'],[3, 'c'] ]) => [[1, 2, 3],[a, b, c]]
- // solution([ [1, 3, 5],[2, 4, 6] ]) => [ [1, 2],[3, 4],[5, 6] ]
+ // solution([ [1, 'a'], [2, 'b'], [3, 'c'] ]) => [ [1, 2, 3],[a, b, c] ]
+ // solution([ [1, 3, 5],[2, 4, 6] ]) => [ [1, 2], [3, 4], [5, 6] ]
  // solution([[]]) => []
+ [ [ [ ] ] ] = [ [] ]
  
 
  ИСПОЛЬЗУЙТЕ МЕТОДЫ МАССИВОВ !
  */
 
-solution2([[1, 3, 5], [2, 4, 6]]);
-solution2([[1, 'a'], [2, 'b'], [3, 'c']]);
+solution([[1, 3, 5], [2, 4, 6]]);
+solution([[1, 'a'], [2, 'b'], [3, 'c']]);
+
+const solution = arr => {
+  return arr[0].map((_, i) => {
+    return arr.map(elem => {
+      return elem[i];
+    });
+  });
+};
 
 /*
  Визуализируйте массив, если в коллекции есть свойство children,
-  тогда создайте вложенный лист
+ тогда создайте вложенный лист
+ 
  name - свойство h1
- children ul->li
+ children ul -> li
 
  Используйте innerHTML
 
  */
+
+/*
+
+<h1>Main</h1>
+<ul>
+  <h1>Catalog</h1>
+  <li>
+    <ul>
+      <h1>Comp</h1>
+      <ul>
+        <li>
+          <h1>Notebook</h1>
+          <h1>...</h1>
+        </li>
+      </ul>
+  </li>
+
+*/
 
 const navigation = [
   { name: 'Главная' },
@@ -31,17 +59,32 @@ const navigation = [
     children: [
       {
         name: 'Компьютеры',
-        children: [
-          { name: 'Ноутбуки' },
-          { name: 'Планшеты' }
-        ]
+        children: [{ name: 'Ноутбуки' }, { name: 'Планшеты' }]
       }
     ]
   },
   { name: 'Профиль' }
 ];
 
-const visualArray = arr => {};
+const visualArray = arr => {
+  let emptyString = '';
+  for (let i = 0; i < arr.length; i++) {
+    let elem = arr[i];
+    emptyString += `<h1>${elem}</h1>`;
+
+    let hasChildren = elem.children;
+
+    for (let j = 0; j < hasChildren.length; j++) {
+      let childElem = hasChildren[j];
+      emptyString += `<ul>`;
+      emptyString += `<h1>${childElem.name}</h1>`;
+      if (hasChildren.children) {
+        hasChildren = hasChildren.children;
+      }
+      emptyString += `</ul>`;
+    }
+  }
+};
 
 /*  ПРИЛОЖЕНИЕ  */
 // 1. Форкните репозиторий Саши.
@@ -70,7 +113,7 @@ class Apple {
       if (secret === '3000') {
         return beep + beep;
       }
-      return 'вы незнаете секрет'
+      return 'вы незнаете секрет';
     };
   }
 
