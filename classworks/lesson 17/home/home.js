@@ -65,27 +65,29 @@ solution([1, 2, 3, 4, 5, 4]); // [5, 4]
  * */
 
 
-// ---
 /* 
 Нужно визуализировать keypad.html -> keypad.js
 Нужно визуализировать index.html -> app.js
 
 Структура виртуализации:
- - header - один блок
+ 
+ - header - один блок 
+
  - main - второй блок
+
+ >------ Это 2 разных класса
+ У каждого из классов, рендер на странице запускается при помощи метода .render
 
 innerHTML по максимуму
 
 https://aleksandra-maslennikova.github.io/telephone-book/keypad.html
 Сделайте чтобы при нажатии на кнопку цифра отобразилась в <span class="numbers">
-
 */
 
 
 /*
 https://aleksandra-maslennikova.github.io/telephone-book/index.html
 По клику по заголовку таблицы, таблица сортировалась по соответствующему свойству
-
 */
 
 
