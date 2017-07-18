@@ -9,11 +9,20 @@
 
  * */
 
-solution([16, 17, 4, 3, 5, 2]) === [17, 5, 2]
-solution([4, 3, 7, 12, 6, 67, 5, 45, 34, 35, 2, 8]); // [67, 45, 35, 8]
-solution([12, 10, 12, 8, 7, 6]); // [12, 8, 7, 6]
-solution([1, 2, 3, 4, 5, 4]); // [5, 4]
+const solution = arr =>
+  arr.filter((elem, index) => {
+    return arr.slice(index + 1).every(nextElem => {
+      return nextElem < elem;
+    });
+  });
 
+console.log(solution([16, 17, 4, 3, 5, 2])); // === [17, 5, 2]
+console.log(
+  solution([4, 3, 7, 12, 6, 67, 5, 45, 34, 35, 2, 8])
+); // [67, 45, 35, 8]
+console.log(solution([12, 10, 12, 8, 7, 6])); // [12, 8, 7, 6]
+console.log(solution([1, 2, 3, 4, 5, 4])); // [5, 4]
+console.log(solution([12, 12, 12])); // [5, 4]
 
 /* TASK 1
  * Сделайте карусель.
@@ -36,7 +45,6 @@ solution([1, 2, 3, 4, 5, 4]); // [5, 4]
  *
  * */
 
-
 /*
 
 * TASK 2
@@ -46,8 +54,7 @@ solution([1, 2, 3, 4, 5, 4]); // [5, 4]
 *
 *
 * */
-.topStyle('fetch', {backgroundColor:'blue'})
-
+// .topStyle('fetch', {backgroundColor:'blue'})
 
 /* @SUPER
  *
@@ -63,7 +70,6 @@ solution([1, 2, 3, 4, 5, 4]); // [5, 4]
  * сделать через regExp
  *
  * */
-
 
 /* 
 Нужно визуализировать keypad.html -> keypad.js
@@ -84,10 +90,7 @@ https://aleksandra-maslennikova.github.io/telephone-book/keypad.html
 Сделайте чтобы при нажатии на кнопку цифра отобразилась в <span class="numbers">
 */
 
-
 /*
 https://aleksandra-maslennikova.github.io/telephone-book/index.html
 По клику по заголовку таблицы, таблица сортировалась по соответствующему свойству
 */
-
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Carousel</title>
@@ -9,7 +10,9 @@
     box-sizing: border-box;
   }
 
-  ul, li, img {
+  ul,
+  li,
+  img {
     margin: 0;
     padding: 0;
   }
@@ -19,7 +22,7 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    height:320px;
+    height: 320px;
   }
 
   ul {
@@ -40,21 +43,28 @@
     width: 748px;
     position: absolute;
   }
-  button {
-  }
+
+  button {}
+
   .right {
-    float:right;
+    float: right;
   }
 </style>
+
 <body>
-<main>
-  <ul class="carousel">
-    <li style="display: none"><img src="img/img1.jpg" alt="1"></li>
-    <li style="display: block"><img src="img/img2.jpg" alt="2"></li>
-    <li style="display: none"><img src="img/img3.jpg" alt="3"></li>
-  </ul>
-  <button class="left"><=</button>
-  <button class="right">=></button>
-</main>
+  <main>
+    <ul class="ec-carousel">
+      <li style="display: none"><img src="img/img1.jpg" alt="1"></li>
+      <li style="display: block"><img src="img/img2.jpg" alt="2"></li>
+      <li style="display: none"><img src="img/img3.jpg" alt="3"></li>
+    </ul>
+    <button class="ec-left"><=</button>
+    <button class="ec-right">=></button>
+  </main>
+  <script src="slider.js"></script>
+  <script>
+    ECSlider.start({ activeElementIndex: 1, sliderTagName: 'ec-carousel' })
+  </script>
 </body>
+
 </html>
