@@ -9,5 +9,5 @@ class Api {
     return fetch(this.url).then(data => data.json);
   }
 }
-
+const url = 'https://google.com';
 const api = new Api(url + 'user');
