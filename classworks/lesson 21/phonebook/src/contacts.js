@@ -12,8 +12,4 @@ class Contacts {
   addUserToState() {
     this.appState.db.users.push(10);
   }
-
-  render() {
-    ``
-  }
 }
